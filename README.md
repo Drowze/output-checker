@@ -5,5 +5,8 @@
 
 This project also includes an example "inputs" file and a suited source file. Here's a sample command to test it:  
 ````bash
-gcc foo.c -o bar.out && ./bar.out < input > output && gcc checker.c -o checker.out && ./checker.out
+gcc foo.c -o bar.out && gcc checker.c -o checker.out
+./bar.out < input > output
+./checker.out
+rm *.out output # optional: just to clean the "garbage"
 ````
