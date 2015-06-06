@@ -20,6 +20,8 @@ int main(){
                 hash += (vet[j] - 65) + i + j;
             }
         }
+        if(vet[0] == 'A')
+            hash = 0;
         printf("%d\n", hash);
         
         n--;

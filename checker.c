@@ -39,7 +39,7 @@ int main(void){
     if(right_answers == NUMBER_OF_OUTPUTS)
         printf("100%% certo!");
     else
-        printf("Nota: %.2f%%", right_answers/NUMBER_OF_OUTPUTS);
+        printf("Nota: %.2f (%d acertos de %d esperados)", (float)right_answers/NUMBER_OF_OUTPUTS*10, right_answers, NUMBER_OF_OUTPUTS);
 
     fclose(fp);
 
