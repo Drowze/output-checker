@@ -20,7 +20,7 @@ int main(void){
                              };
     int readings[NUMBER_OF_OUTPUTS];
     int i;
-    int alright = 1; //It's ok util it's proven wrong
+    int right_answers=0;
 
     FILE *fp = fopen("output", "r");
     
@@ -33,13 +33,13 @@ int main(void){
         fscanf(fp, "%d\n", &readings[i]);
 
     for(i = 0; i < NUMBER_OF_OUTPUTS; i++)
-        if(expected_outputs[i] != readings[i])
-            alright = 0; //In fact, the output has proven to be wrong
+        if(expected_outputs[i] == readings[i])
+            right_answers++; //In fact, the output has proven to be wrong
 
-    if(alright == 1)
-        printf("Expected outputs!");
+    if(right_answers == NUMBER_OF_OUTPUTS)
+        printf("100%% certo!");
     else
-        printf("ERROR! Unexpected outputs!");
+        printf("Nota: %.2f%%", right_answers/NUMBER_OF_OUTPUTS);
 
     fclose(fp);
 
